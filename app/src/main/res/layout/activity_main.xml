@@ -4,12 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/test_item"
-        android:background="#7a7a7a" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#7a7a7a"
+        tools:listitem="@layout/test_item" />
+
+    <Button
+        android:id="@+id/notify_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="notify Header"
+        tools:ignore="HardcodedText" />
+    <Button
+        android:id="@+id/notify_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="notify footer"
+        tools:ignore="HardcodedText" />
 </LinearLayout>
