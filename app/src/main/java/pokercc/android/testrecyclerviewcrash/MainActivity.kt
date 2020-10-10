@@ -59,7 +59,9 @@ abstract class FixBaseAdapter<T, K : BaseViewHolder>(layoutResId: Int) :
     BaseQuickAdapter<T, K>(layoutResId) {
     override fun createBaseViewHolder(view: View): K {
         (view.parent as? ViewGroup)?.removeView(view)
+        // Fix “java.lang.IllegalArgumentException: Called attach on a child which is not detached" when notifyItemChanged(0).
         // Create a wrapper viewGroup will create new layoutParams and reuse headerView.
+        // Avoid RecyclerView.getChildViewHolderInt() return the old viewHolder which occur crash.
         val item = FrameLayout(view.context)
         item.addView(view)
         item.layoutParams = RecyclerView.LayoutParams(view.layoutParams)
