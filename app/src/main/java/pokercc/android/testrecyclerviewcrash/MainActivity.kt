@@ -68,7 +68,7 @@ abstract class FixBaseAdapter<T, K : BaseViewHolder>(layoutResId: Int) :
         return super.createBaseViewHolder(item)
     }
 }
-
+// ATTENTION : If test crash ,please extends to BaseQuickAdapter.
 private class TestAdapter : FixBaseAdapter<Int, TestVH>(View.NO_ID) {
 
 
